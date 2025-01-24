@@ -7,7 +7,6 @@ class DataIngestionConfig:
     root_dir: Path
     source_URL: str
     local_data_file: Path
-<<<<<<< HEAD
     unzip_dir: Path
 
 
@@ -33,6 +32,14 @@ class TrainingConfig:
     params_batch_size: int
     params_is_augmentation: bool
     params_image_size: list
-=======
     unzip_dir: Path
->>>>>>> a383f156462c216cfecdc56b364743e4c364b632
+    
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_uri: str
+    params_image_size: list
+    params_batch_size: int
